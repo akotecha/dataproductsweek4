@@ -1,0 +1,49 @@
+---
+title: "Mtcars Shiny Prediction Model - Reproducible Pitch"
+author: "Amar Kotecha"
+date: "29 April 2018"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Course Project
+
+The project involves two main parts:
+
+1. Write a shiny application with associated documentation and deploy the application on Shiny's server.
+2. Develop a presentation to pitch the app using RStudio Presenter. 
+
+## App Overview
+
+- The app is a prediction model based off the mtcars dataset contained within R
+- A linear model is fit to the dataset to predict the efficiency of a car (mpg) using three variables:
+
+1. Weight
+2. Quarter mile time
+3. Transmission
+
+
+## Graphs - mpg against dependent variables
+
+```{r cars, echo = FALSE, warning=FALSE, message=FALSE}
+data("mtcars")
+attach(mtcars)
+par(mfrow=c(1,3))
+plot(wt,mpg, main="Scatterplot of wt vs. mpg", data = mtcars)
+plot(qsec,mpg, main="Scatterplot of qsec vs. mpg", data = mtcars)
+boxplot(mpg~am, main="Boxplot of mpg by am (0=Auto, 1=Man)", data = mtcars)
+```
+
+## Links
+
+The app has been published to the Shiny server and can be found here:
+
+https://akotecha.shinyapps.io/Data_Products_Coursera/
+
+The code and associated documentation can be found at the github repository:
+
+https://github.com/akotecha/dataproductsweek4
+
